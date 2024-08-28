@@ -1,0 +1,16 @@
+:root {
+    --color1: rgb(69, 25, 82);
+    --color2: rgb(102, 37, 73);
+    --color3: rgb(174, 68, 90);
+    --color4: rgb(243, 159, 90);
+  }
+
+
+footer {
+    background-color: var(--color1);
+    text-align: center;
+    padding: 5px;
+    clear: both;
+    border: var(--color3) solid 2px;
+    color: var(--color3);
+  }

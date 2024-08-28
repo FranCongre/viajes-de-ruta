@@ -1,0 +1,150 @@
+/* font-family: "Poppins", sans-serif; */
+/* font-family: "Caveat", cursive; */
+/* font-family: "Exo 2", sans-serif; */
+/* font-family: "Satisfy", cursive; */
+/* font-family: "Fraunces", serif; */
+
+:root {
+  --color1: rgb(69, 25, 82);
+  --color2: rgb(102, 37, 73);
+  --color3: rgb(174, 68, 90);
+  --color4: rgb(243, 159, 90);
+}
+/* *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+body {
+  margin: 0px;
+}
+.arriba {
+  padding: 5px;
+  display: flex;
+  img {
+    width: 220px;
+    height: 100px;
+  }
+  font-family: "Exo 2", sans-serif;
+  font-size: 60px;
+  font-style: italic;
+  background: #451952;
+  background: radial-gradient(
+    circle farthest-corner at center center,
+    #451952 50%,
+    #662549 80%
+  );
+  background: -webkit-radial-gradient(
+    circle farthest-corner at center center,
+    #451952 50%,
+    #662549 80%
+  );
+  background: -moz-radial-gradient(
+    circle farthest-corner at center center,
+    #451952 50%,
+    #662549 80%
+  );
+  color: var(--color4);
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  header {
+    text-shadow: 2px 2px 2px black;
+    margin-left: 20px;
+  }
+}
+
+.barra{
+  background-color: var(--color2);
+  height: 50px;
+  display: flex;
+}
+.menu {
+  margin: 0;
+  padding-left: 20px;  
+  display: inline-block; 
+}
+.menu:hover{
+   cursor: pointer;
+}
+
+
+.opcion{
+   position:absolute;
+   width: auto;
+   background-color: var(--color4);
+   border: 1px solid black;
+   color: black;
+   list-style-type: none;
+   font-family: "Fraunces", serif;
+   font-size: 20px;
+   text-decoration:none;
+   z-index: 999;
+
+}
+
+.opcion:hover{
+   background-color: rgb(114, 99, 189);
+   transition: background-color 3s;
+}
+
+
+.activo{
+   text-decoration:none;
+   color: white;   
+   padding: 5px;
+   border: 1px solid black; 
+   display: none;
+}
+
+.opcion a{
+   text-decoration: none;
+   color: Black;
+   text-align: center;
+   padding-right: 5px;
+   padding-bottom: 0;
+}
+
+
+.opcion li ul{
+   border-bottom: 1px solid black;
+   
+}
+
+.opcion li ul a{
+   color: blanchedalmond;
+}
+
+.opcion li ul a:hover{
+   background-color: grey;
+}
+
+.activo .activo{
+   display: block;
+   flex-direction: row;
+}
+
+.cuerpo {
+  display: flex;
+  flex-direction: column;
+  position:relative;
+}
+
+.cuerpo {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+footer {
+  background-color: var(--color1);
+  text-align: center;
+  padding: 5px;
+  clear: both;
+  border: var(--color3) solid 2px;
+  color: var(--color3);
+}
+
+/* fin index */

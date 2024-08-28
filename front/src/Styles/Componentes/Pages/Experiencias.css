@@ -1,0 +1,42 @@
+:root {
+  --color1: rgb(69, 25, 82);
+  --color2: rgb(102, 37, 73);
+  --color3: rgb(174, 68, 90);
+  --color4: rgb(243, 159, 90);
+}
+
+/* .cuerpo1 {
+  display: flex;
+  
+} */
+
+.experiencias {
+  width: 80%;
+  text-align: center;
+  font-family: "Exo 2", sans-serif;
+  h2 {
+    font-family: "Caveat", cursive;
+    font-size: 60px;
+    margin: 0px;
+  }
+  .cajas {
+    display: flex;
+    background-color: gray;
+    border-radius: 61px 61px 61px 61px;
+    margin: 5px;
+    padding: 2px;
+    div {
+      display: flex;
+      flex-direction: column;
+    }
+    img {
+      margin: 20px;
+      border-radius: 61px 0px 0px 61px;
+    }
+    P {
+      text-align: justify;
+      margin-right: 25px;
+      margin-top: 5px;
+    }
+  }
+}

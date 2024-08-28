@@ -1,0 +1,26 @@
+<div class="conteiner">
+<div class="row" style="margin: 15px; padding: 15px;">
+    <div class="col">
+        <td>
+             <h4>Agregar una nueva Experiencias <a type="button" class="btn btn-outline-danger" href="/admin/experiencias-admin/inicio"><i class="bi bi-rewind"> Inicio</i></a></h4>        
+        </td>
+    </div class="row">
+    <form class="row g-3" action="/admin/experiencias-admin/inicio/agregar" method="post" enctype="multipart/form-data">
+        <div class="col-md-4">
+            <input type="text" class="form-control" placeholder="Titulo" name="titulo">
+        </div>
+        <div class="row-4">
+            <label for=""> Imagen : </label>
+           <input type="file" class="form-control" placeholder="Imagen" name="imagen" id="imagen">
+        </div>
+        <div class="mb-3">
+            <textarea class="form-control" placeholder="Cuerpo" name="texto"> </textarea>
+        </div>
+            <button type="submit" class="btn btn-outline-success">AGREGAR</button>
+            {{#if error}}
+            <p>{{message}}</p>
+            {{/if}}
+    </form>
+</div>
+</div>
+</div>

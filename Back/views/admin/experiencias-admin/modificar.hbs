@@ -1,0 +1,38 @@
+<div class="conteiner">
+    <div class="row" style="margin: 15px; padding: 15px;">
+        <div class="col">
+            <td>
+                <h4>Modificar Experiencia {{Experiencias.id}} <a type="button" class="btn btn-outline-danger"
+                        href="/admin/experiencias-admin/inicio"><i class="bi bi-rewind"> Volver</i></a></h4>
+            </td>
+        </div class="row">
+        <form class="row g-3" action="/admin/experiencias-admin/inicio/modificar" method="post"
+            enctype="multipart/form-data">
+            <input type="hidden" value="{{experiencias.id}}" name="id">
+            <div class="col-md-4">
+                <input type="text" class="form-control" placeholder="Titulo" name="titulo" value="{{Experiencias.titulo}}">
+            </div>
+            <div class="col-md-4">
+                <p></p>
+
+                <label for=""> Imagen : </label>
+                <input type="file" class="form-control" placeholder="Imagen" name="imagen" id="imagen">
+                </p>
+                <p>
+                    <label><input type="checkbox" name="img_delete" id="img_delete" value="1">¿Ustede desea
+                        eliminar la imagen?</label>
+                    <input type="hidden" name="img_original" id="{{experiencias.img_id}}">
+                  
+
+                </p>
+            </div>
+            <div class="mb-3">
+                <textarea class="form-control" placeholder="Cuerpo" name="texto"> {{Experiencias.texto}} </textarea>
+            </div>
+            <button type="submit" class="btn btn-outline-success">Modificar</button>
+            {{#if error}}
+            <p>{{message}}</p>
+            {{/if}}
+        </form>
+    </div>
+</div>

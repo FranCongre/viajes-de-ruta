@@ -1,0 +1,25 @@
+<div class="conteiner">
+<div class="row" style="margin: 15px; padding: 15px;">
+    <div class="col">
+        <td>
+             <h4>Agregar un nuevo Consejo <a type="button" class="btn btn-outline-danger" href="/admin/consejosadmin/inicio"><i class="bi bi-rewind"> Inicio</i></a></h4>        
+        </td>
+    </div class="row">
+    <form class="row g-3" action="/admin/consejosadmin/inicio/agregar" method="post">
+        <div class="col-md-4">
+            <input type="text" class="form-control" placeholder="Titulo" name="titulo"">
+        </div>
+        <div class="col-md-4">
+            <input type="text" class="form-control" placeholder="Subtitulo" name="subtitulo"">
+        </div>
+        <div class="mb-3">
+            <textarea class="form-control" placeholder="Cuerpo" name="texto"> </textarea>
+        </div>
+            <button type="submit" class="btn btn-outline-success">AGREGAR</button>
+            {{#if error}}
+            <p>{{message}}</p>
+            {{/if}}
+    </form>
+</div>
+</div>
+</div>
