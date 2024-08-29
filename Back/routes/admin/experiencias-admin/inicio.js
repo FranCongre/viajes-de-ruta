@@ -82,6 +82,11 @@ router.post('/agregar', async (req, res, next) => {
 //**eliminar Experiencias**
 router.get('/eliminar/:id', async (req, res, next) => {
   var id = req.params.id;
+    let experiencias = await experienciasModel.getExperienciasById(id);
+    if(experiencias.img_id) {
+      await(destroy(experiencias.img_id))
+    }
+
   await experienciasModel.deleteExperienciasById(id);
   res.redirect('/admin/experiencias-admin/inicio');
 });
@@ -101,6 +106,8 @@ router.post('/modificar', async (req, res, next) => {
     let img_id = req.body.img_original;
 
     let borrar_img_vieja = false;
+
+    console.log(req.body.img_delete, 'holaaa')
 
     if (req.body.img_delete === "1") {
       img_id = null;

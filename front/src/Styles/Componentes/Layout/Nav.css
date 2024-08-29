@@ -64,17 +64,16 @@
 }
 
 
-.opcion li ul{
-   border-bottom: 1px solid black; 
+.opcion li{
    margin-bottom: 20px;
    font-size: 20px;
 }
 
-.opcion li ul a{
+.opcion li a{
    color: blanchedalmond;
 }
 
-.opcion li ul a:hover{
+.opcion li a:hover{
    background-color: grey;
    border-radius: 5px;
 }
