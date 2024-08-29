@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var fileupload = require('express-fileupload');
 
-// var cors = require('cors');
+var cors = require('cors');
 
 
 require('dotenv').config();
@@ -17,7 +17,7 @@ var loginRouter = require('./routes/admin/login');
 var adminRouter = require('./routes/admin/inicio');
 var consejosRouter = require('./routes/admin/consejosadmin/inicio');
 var experienciasRouter = require('./routes/admin/experiencias-admin/inicio');
-// var apiRouter = require('.routes/api');
+var apiRouter = require('./routes/api');
 
 var app = express();
 
@@ -71,7 +71,7 @@ app.use('/admin/login', loginRouter);
 app.use('/admin/inicio', secured, adminRouter);
 app.use('/admin/consejosadmin/inicio', secured, consejosRouter);
 app.use('/admin/experiencias-admin/inicio', secured, experienciasRouter);
-// app.use('/api', cors(), apiRouter)
+app.use('/api', cors(), apiRouter)
 
 
 
