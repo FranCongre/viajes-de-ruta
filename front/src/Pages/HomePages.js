@@ -6,7 +6,9 @@ const HomePage = (props) => {
         <div>
             <div className="cuerpo">
                 <main className="bienvenido">
+                    <div>
                     <img src="./imagenes/bienvenido.jpg" alt="bienvenido" />
+                    </div>
                     <h2>BIENVENIDOS</h2>
                     <div>
                         <p>
