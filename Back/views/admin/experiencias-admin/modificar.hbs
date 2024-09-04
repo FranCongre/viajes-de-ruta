@@ -8,22 +8,21 @@
         </div class="row">
         <form class="row g-3" action="/admin/experiencias-admin/inicio/modificar" method="post"
             enctype="multipart/form-data">
-            <input type="hidden" value="{{experiencias.id}}" name="id">
+            <input type="hidden" value="{{Experiencias.id}}" name="id">
             <div class="col-md-4">
                 <input type="text" class="form-control" placeholder="Titulo" name="titulo" value="{{Experiencias.titulo}}">
             </div>
             <div class="col-md-4">
                 <p></p>
 
-                <label for=""> Imagen : </label>
+                <label> Imagen : </label>
                 <input type="file" class="form-control" placeholder="Imagen" name="imagen" id="imagen">
                 </p>
                 <p>
                     <label><input type="checkbox" name="img_delete" id="img_delete" value="1">¿Ustede desea
                         eliminar la imagen?</label>
-                    <input type="hidden" name="img_original" id="{{experiencias.img_id}}">
+                    <input type="hidden" class="form-control" name="img_original" id="{{experien.img_id}}">
                   
-
                 </p>
             </div>
             <div class="mb-3">

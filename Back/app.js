@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var fileupload = require('express-fileupload');
+var fileUpload = require('express-fileupload');
 
 var cors = require('cors');
 
@@ -20,6 +20,7 @@ var experienciasRouter = require('./routes/admin/experiencias-admin/inicio');
 var apiRouter = require('./routes/api');
 
 var app = express();
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -58,10 +59,9 @@ secured = async (req,res,next) => {
 }
 
 /// subida de imagenes
-app.use(fileupload({
+app.use(fileUpload({
   useTempFiles: true,
   tempFileDir: '/tmp/',
-  createParentPath: true,
 }));
 
 

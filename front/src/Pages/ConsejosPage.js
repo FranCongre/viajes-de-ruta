@@ -1,66 +1,46 @@
 import React from "react";
-import '../Styles/Componentes/Pages/Consejos.css'
 import '../Styles/Componentes/Layout/Aside.css'
+import Aside from "../componentes/Layout/Aside";
+import { useState, useEffect } from "react";
+import axios from 'axios';
+import '../Styles/Componentes/Pages/Consejos.css'
+import ConsejosItem from "../componentes/Consejos/ConsejosItem";
 
 const Consejos = (props) => {
-    return (
-        <div>
-            <div className="cuerpo1">
-                <main className="consejos">
-                    <div>
-                        <h2>Titulo</h2>
-                        <p>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea
-                            dolore esse numquam laboriosam soluta similique ad placeat minima
-                            impedit, iure quasi quam facere vel quos eius harum cupiditate
-                            animi commodi!
-                        </p>
-                    </div>
-                    <div>
-                        <h2>Titulo</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            Molestias in corporis, amet iure ipsa voluptatem voluptatum
-                            temporibus vel? Nemo cumque quis in fugiat nesciunt delectus.
-                            Vitae dolorem fugiat illo soluta. Eaque dolorum, error voluptatem
-                            nihil expedita natus debitis! Quasi facere placeat explicabo
-                            necessitatibus facilis sit dicta excepturi nulla fugiat
-                            praesentium! Fugit reiciendis iste inventore enim qui eveniet.
-                            Maxime, distinctio quas? Ex cupiditate soluta recusandae
-                            voluptatibus odio aliquam accusamus nostrum? Inventore eius
-                            dolorem asperiores voluptate libero reiciendis incidunt quos?
-                            Perferendis impedit reprehenderit magnam nulla. Vitae amet
-                            sapiente earum dignissimos voluptatem magnam.
-                        </p>
-                    </div>
-                    <div>
-                        <h2>Titulo</h2>
-                        <p>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea
-                            dolore esse numquam laboriosam soluta similique ad placeat minima
-                            impedit, iure quasi quam facere vel quos eius harum cupiditate
-                            animi commodi!
-                        </p>
-                    </div>
-                </main>
-                <aside className="lateral">
-                    <div className="datos">
-                        <h2>Otras vias de comunicacion</h2>
-                        <p>Tambien puedes contactarte con nosotros por los siguientes medios</p>
-                        <ul>
-                            <li>Telefono : 354364017</li>
-                            <li>Mail : ejemplo@ejemplo </li>
-                            <li>redes :</li>
-                            <ul>
-                                <li> instagram</li>
-                                <li>youtube</li>
-                                <li>tiktok</li>
-                            </ul>
-                        </ul>
-                    </div>
-                </aside>
-            </div></div>
-    );
+  const [loading, setLoading] = useState(false);
+  const [consejos, setConsejos] = useState([]);
+
+  useEffect(() => {
+    const cargarConsejos = async () => {
+      setLoading(true);
+      const response = await axios.get('http://localhost:3000/api/consejos');
+      setConsejos(response.data);
+      setLoading(false);
+    }
+    cargarConsejos();
+  }, []);
+  return (
+    <div>
+      <div className="cuerpo1">
+        <main className="consejos">
+          <div>
+            <h1>Consejos</h1>
+
+            {
+              loading ? (
+                <p>Cargando...</p>
+              ) : (
+                consejos.map(item => <ConsejosItem key={item.id}
+                  title={item.titulo} subtitle={item.subtitulo} body={item.texto} />)
+              )
+            }
+          </div>
+
+        </main>
+        <Aside />
+      </div>
+    </div>
+  );
 }
 
 export default Consejos;

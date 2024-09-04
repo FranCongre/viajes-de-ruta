@@ -18,7 +18,7 @@ function newNav() {
             </NavDropdown.Item>
             <NavDropdown.Divider />
             <NavDropdown.Item href="/Experiencias">
-            <a>Experiencia</a>
+            <a>Experiencias</a>
             </NavDropdown.Item>
             <NavDropdown.Divider />
             <NavDropdown.Item href="/Consejos"><a>Consejos</a></NavDropdown.Item>

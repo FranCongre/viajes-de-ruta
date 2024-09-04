@@ -17,7 +17,7 @@ router.get('/', async function (req, res, next) {
       var imagen = cloudinary.image(experien.img_id, {
         with: 100,
         height: 100,
-        crop: 'fill'
+        crop: 'pad'
       });
       return {
         ...experien,
@@ -25,7 +25,7 @@ router.get('/', async function (req, res, next) {
       }
     } else {
       return {
-        experien,
+        ...experien,
         imagen
       }
     }
@@ -47,8 +47,8 @@ router.get('/agregar', (req, res, next) => {
 
 router.post('/agregar', async (req, res, next) => {
   try {
+    //agregar imagen
     var img_id = "";
-    console.log(req.files.imagen);
     if (req.files && Object.keys(req.files).length > 0) {
     var imagen = req.files.imagen;
     var img_id = (await uploader(imagen.tempFilePath)).public_id;
@@ -107,7 +107,7 @@ router.post('/modificar', async (req, res, next) => {
 
     let borrar_img_vieja = false;
 
-    console.log(req.body.img_delete, 'holaaa')
+    console.log('hola',req.body.img_original, 'hola')
 
     if (req.body.img_delete === "1") {
       img_id = null;
@@ -123,10 +123,12 @@ router.post('/modificar', async (req, res, next) => {
       await (destroy(req.body.img_original));
     }
 
+    var Experiencias = await experienciasModel.getExperienciasById(req.body.id)
+
     var obj = {
       titulo: req.body.titulo,
       texto: req.body.texto,
-      img_id 
+      img_id : img_id === '' ? Experiencias.img_id : img_id
     }
     if (req.body.titulo  != "" && req.body.texto != "") {
       await experienciasModel.modificarExperienciasById(obj, req.body.id)
@@ -137,7 +139,7 @@ router.post('/modificar', async (req, res, next) => {
         error: true,
         message: '*Todos los campos son requieridos*'
       })
-    } console.log(experienciasModel.modificarExperienciasById)
+    } console.log('aca',experienciasModel.modificarExperienciasById)
   } catch (error) {
     console.error("error especifico",error)
     res.render('admin/experiencias-admin/modificar', {

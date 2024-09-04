@@ -5,38 +5,65 @@
   --color4: rgb(243, 159, 90);
 }
 
-/* .cuerpo1 {
+.cuerpo1 {
   display: flex;
-  
-} */
+  justify-content: space-between;
+  h1{
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  text-decoration:overline;
+  font-size: 20px;
+  color: var(--color4);
+  background-color: var(--color2);
+  border-radius: 0px 0px 61px 61px;
+  margin-top: 0;
+  margin-left: 120px;
+  width: 200px;
+}
+}
 
 .experiencias {
-  width: 80%;
   text-align: center;
   font-family: "Exo 2", sans-serif;
+  margin: 0;
+  
   h2 {
     font-family: "Caveat", cursive;
     font-size: 60px;
     margin: 0px;
   }
-  .cajas {
+  
+}
+.cajas {
+  display: flex;
+  background-color: gray;
+  border-radius: 61px 61px 61px 61px;
+  margin: 5px;
+  padding: 2px;
+  div {
     display: flex;
-    background-color: gray;
-    border-radius: 61px 61px 61px 61px;
-    margin: 5px;
-    padding: 2px;
-    div {
-      display: flex;
-      flex-direction: column;
+    flex-direction: column;
+    width: 500px;
+    h3{
+      font-size: 40px;
+      text-align: center;
+      font-family: "Caveat", cursive;
+      font-style: italic;
+      margin: 0;
+      margin-top: 15px;
     }
-    img {
-      margin: 20px;
-      border-radius: 61px 0px 0px 61px;
-    }
-    P {
-      text-align: justify;
-      margin-right: 25px;
-      margin-top: 5px;
-    }
+  }
+  img {
+    margin: 20px;
+    border-radius: 61px 0px 0px 61px;
+    width: 400px;
+    height: 200px;
+  }
+  .p {
+    text-align: justify;
+    margin-right: 10px;
+    margin-top: 15px;
+    margin-left: -25px;
+    font-family: "Fraunces", serif;
   }
 }
